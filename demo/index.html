@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Achievement Alert</title>
+  <meta name="description" content="Achievement alert Demo">
+  <meta name="author" content="Achievement alert Demo">
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Achievement Alert Requirements -->
+  <link rel="stylesheet" href="css/achievement_alert.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	
+	<!-- content -->
+	<div class="container">
+
+      <div class="jumbotron">
+        <h1>Achievement Alert</h1>
+        <p class="lead">A jQuery plugin that will allow new ways for you to engage your users with your website.</p>
+        <p><div id="click_button" class="btn btn-lg btn-success" role="button">Click Me!</div></p>
+      </div>
+      
+    </div> <!-- /content -->
+    
+    <!-- Scripts for Demo --> 
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/achievement_alert.js"></script>
+	<script>
+		$("#click_button").on('click', function() {
+			$().achievement_alert({
+				duration: 400,
+				display: 1000,
+		        title: 'Awesome Sauce!',
+		        points : '35',
+		        currency : ' Points',
+		        name : 'You clicked the button!',
+		        icon : 'fa-trophy'
+				});
+		});
+		
+		$(document).keydown(function( event ) {
+		  	$().achievement_alert({
+				duration: 400,
+		        name : 'You press the ' + String.fromCharCode(event.keyCode) + ' key!'
+			});
+		});
+	</script>
+</body>
+</html>
